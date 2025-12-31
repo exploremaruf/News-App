@@ -2,6 +2,7 @@ package com.maruf.newsapp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -88,10 +90,12 @@ public class MainActivity extends AppCompatActivity {
 
             TextView cat, title, des;
             ImageView itemimage;
+            LinearLayout itemlayout;
             cat = myview.findViewById(R.id.itemcat);
             itemimage = myview.findViewById(R.id.itemimage);
             title = myview.findViewById(R.id.itemtitle);
             des = myview.findViewById(R.id.itemdes);
+            itemlayout=myview.findViewById(R.id.itemlayout);
 
             hashMap = arrayList.get(position);
             String icat, iimage_url, ititle, ides;
@@ -110,6 +114,14 @@ public class MainActivity extends AppCompatActivity {
             Random rnd = new Random();
             int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
             cat.setBackgroundColor(color);
+
+            itemlayout.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(MainActivity.this, NewsDetails.class));
+                }
+            });
 
             return myview;
 

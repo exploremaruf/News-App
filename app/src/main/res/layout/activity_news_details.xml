@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,5 +7,75 @@
     android:layout_height="match_parent"
     tools:context=".NewsDetails">
 
+    <RelativeLayout
+        android:id="@+id/topcover"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/newcover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/blank_image" />
+
+        <TextView
+            android:id="@+id/newstitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="#AD000000"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="10dp"
+            android:text="Meta Makes Major Move, Acquires AI Startup Manas for $2B"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topcover"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/newsdes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Social media giant Meta has made a significant stride in artificial intelligence by acquiring Singapore-based AI startup Manas, reports TechCrunch.
+
+Earlier this year, Manas gained attention with a viral demo showcasing AI agents capable of job candidate screening, travel planning, and stock market analysis.
+The company claimed its technology surpassed even OpenAI’s deep research capability.
+
+Within weeks, Manas secured $75 million in investment at a valuation of around $500 million.
+Despite some criticism, the startup quickly amassed millions of users and generated $100 million in annual recurring revenue.
+
+According to the Wall Street Journal, Meta completed the acquisition for approximately $2 billion, stating that Manas will operate independently but its AI agents will be integrated into Facebook, Instagram, and WhatsApp.
+Meta also announced the cessation of Chinese investment and operations in the startup."
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="12dp"
+        android:backgroundTint="#FFC107"
+        android:src="@drawable/voicetext"
+        app:tint="@android:color/white" />
+
+</RelativeLayout>
