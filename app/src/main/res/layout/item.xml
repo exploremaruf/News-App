@@ -11,7 +11,10 @@
         android:background="@drawable/rectangle_curved"
         android:elevation="10dp"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        >
 
         <ImageView
             android:id="@+id/itemimage"
@@ -51,6 +54,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/itemdes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
