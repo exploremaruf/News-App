@@ -3,7 +3,9 @@ package com.maruf.newsapp;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -119,6 +121,15 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v) {
+
+                    NewsDetails.TITLE=ititle;
+                    NewsDetails.DESCRIPTION=ides;
+
+                    Bitmap bitmap= ((BitmapDrawable)itemimage.getDrawable()).getBitmap();
+
+                    NewsDetails.MY_BITMAP = bitmap;
+
+
                     startActivity(new Intent(MainActivity.this, NewsDetails.class));
                 }
             });
